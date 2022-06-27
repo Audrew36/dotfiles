@@ -1,8 +1,9 @@
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
+Plug 'Mofiqul/vscode.nvim'
+"Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
 Plug 'ryanoasis/vim-devicons'
-Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
 Plug 'sheerun/vim-polyglot'
 Plug 'windwp/nvim-autopairs'
 Plug 'neoclide/vim-jsx-improve'
@@ -57,6 +58,17 @@ Plug 'hrsh7th/vim-vsnip'
 " Plug 'dcampos/cmp-snippy'
 
 call plug#end()
+
+set background=dark
+"set background=light
+" Enable transparent background
+let g:vscode_transparency = 1 
+" Enable italic comment
+let g:vscode_italic_comment = 1 
+" Disable nvim-tree background color
+let g:vscode_disable_nvimtree_bg = v:true
+colorscheme vscode
+
 set guifont=DroidSansMono\ Nerd\ Font\ 11
 " ------------------------------------------------------------
 " auto-pairs configuration
