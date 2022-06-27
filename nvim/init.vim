@@ -55,6 +55,11 @@ let NERDTreeMinimalMenu = 1
 let NERDTreeWinPos = "left"
 let NERDTreeWinSize = 31
 
+let g:NERDTreeMinimalUI = 1
+let g:NERDTreeIgnore = []
+let g:NERDTreeStatusline = ''
+" Automaticaly close nvim if NERDTree is only thing left open
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ------------------------------------------------------------
 " tagbar configuration
@@ -91,9 +96,8 @@ let g:ctrlsf_default_root = 'cwd'   " projcet
 au! BufEnter *.cpp let b:fswitchdst = 'hpp,h'
 au! BufEnter *.h   let b:fswitchdst = 'cpp,c'
 
-" General
+nmap <C-t> :sp<bar>term<cr><c-w>J:resize10<cr>
 nmap        <C-B>     :buffers<CR>
-nmap        <C-t>     :term<CR>
 
 colorscheme onenord
 set encoding=UTF-8
@@ -101,13 +105,26 @@ set completeopt=menu,menuone,noselect
 let g:jsx_improve_javascriptreact = 0
 
 inoremap jk <ESC>
-nmap <C-n> :NERDTreeToggle<CR>
+nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 vmap // <plug>NERDCommenterToggle
 nmap // <plug>NERDCommenterToggle
 
 " open NERDTree automatically
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * NERDTree
+" open new split panes to right and below
+set splitright
+set splitbelow
+" turn terminal to normal mode with escape
+tnoremap <Esc> <C-\><C-n>
+" start terminal in insert mode
+au BufEnter * if &buftype == 'terminal' | :startinsert | endif
+" open terminal on ctrl+n
+function! OpenTerminal()
+  split term://bash
+  resize 10
+endfunction
+nnoremap <c-t> :call OpenTerminal()<CR>
 
 let g:NERDTreeGitStatusWithFlags = 1
 "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
