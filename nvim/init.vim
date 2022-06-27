@@ -109,6 +109,15 @@ nnoremap <silent> <C-n> :NERDTreeToggle<CR>
 vmap // <plug>NERDCommenterToggle
 nmap // <plug>NERDCommenterToggle
 
+" use alt+hjkl to move between split/vsplit panels
+tnoremap <A-h> <C-\><C-n><C-w>h
+tnoremap <A-j> <C-\><C-n><C-w>j
+tnoremap <A-k> <C-\><C-n><C-w>k
+tnoremap <A-l> <C-\><C-n><C-w>l
+nnoremap <A-h> <C-w>h
+nnoremap <A-j> <C-w>j
+nnoremap <A-k> <C-w>k
+nnoremap <A-l> <C-w>l
 " open NERDTree automatically
 "autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * NERDTree
@@ -116,7 +125,7 @@ nmap // <plug>NERDCommenterToggle
 set splitright
 set splitbelow
 " turn terminal to normal mode with escape
-tnoremap <Esc> <C-\><C-n>
+"tnoremap <Esc> <C-\><C-n>
 " start terminal in insert mode
 au BufEnter * if &buftype == 'terminal' | :startinsert | endif
 " open terminal on ctrl+n
@@ -169,9 +178,7 @@ set shiftwidth=2
 " always uses spaces instead of tab characters
 set expandtab
 
-"colorscheme gruvbox
-
-" sync open file with NERDTree
+ sync open file with NERDTree
 " " Check if NERDTree is open or active
 function! IsNERDTreeOpen()        
   return exists("t:NERDTreeBufName") && (bufwinnr(t:NERDTreeBufName) != -1)
