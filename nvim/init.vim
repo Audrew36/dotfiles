@@ -33,7 +33,9 @@ Plug 'scrooloose/nerdcommenter'
 
 Plug 'HerringtonDarkholme/yats.vim' " TS Syntax
 
-" Initialize plugin system
+Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 call plug#end()
 set guifont=DroidSansMono\ Nerd\ Font\ 11
 " ------------------------------------------------------------
