@@ -1,2 +1,2 @@
 # .dotfiles
- configuration for nvim and vim
+ unix philosophy
