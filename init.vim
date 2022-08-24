@@ -1,12 +1,19 @@
+" ----------- DONT FORGET TO INSTALL VIM-PLUG --------------
 " Specify a directory for plugins
 call plug#begin('~/.vim/plugged')
 
 Plug 'Mofiqul/vscode.nvim'
+Plug 'luochen1990/rainbow'
 "Plug 'rmehri01/onenord.nvim', { 'branch': 'main' }
+"Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'ryanoasis/vim-devicons'
-Plug 'sheerun/vim-polyglot'
 Plug 'windwp/nvim-autopairs'
-Plug 'neoclide/vim-jsx-improve'
+Plug 'maxmellon/vim-jsx-pretty'
+"Plug 'pangloss/vim-javascript'
+"Plug 'mxw/vim-jsx'
+"Plug 'leafgarland/typescript-vim'
+"Plug 'peitalin/vim-jsx-typescript'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
 Plug 'hrsh7th/cmp-buffer'
@@ -26,8 +33,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim' 
 Plug 'scrooloose/nerdcommenter'
-"Plug 'prettier/vim-prettier', 
-"Plug 'christoomey/vim-tmux-navigator'
+Plug 'prettier/vim-prettier', 
 Plug 'HerringtonDarkholme/yats.vim' 
 
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
@@ -58,6 +64,17 @@ Plug 'hrsh7th/vim-vsnip'
 " Plug 'dcampos/cmp-snippy'
 
 call plug#end()
+set termguicolors
+let g:rainbow_active = 1
+autocmd VimEnter * RainbowToggle
+let g:vim_jsx_pretty_colorful_config = 0
+"let g:Hexokinase_highlighters = [ 'virtual' ]
+"let g:Hexokinase_highlighters = [ 'sign_column' ]
+let g:Hexokinase_highlighters = [ 'backgroundfull' ]
+
+"let g:rainbow#max_level = 99
+"let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
+"autocmd FileType * RainbowParentheses
 
 set background=dark
 "set background=light
@@ -331,7 +348,7 @@ omap af <Plug>(coc-funcobj-a)
 nmap <silent> <C-d> <Plug>(coc-range-select)
 xmap <silent> <C-d> <Plug>(coc-range-select)
 
-" Use `:Format` to format current buffer
+" Use `:Format` t
 command! -nargs=0 Format :call CocAction('format')
 
 " Use `:Fold` to fold current buffer
@@ -360,75 +377,3 @@ nnoremap <silent> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent> <space>p  :<C-u>CocListResume<CR>
-
-lua require'colorizer'.setup()
-
-lua <<EOF
-  -- Setup nvim-cmp.
-  local cmp = require'cmp'
-  cmp.setup({
-    snippet = {
-      -- REQUIRED - you must specify a snippet engine
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
-        -- require('snippy').expand_snippet(args.body) -- For `snippy` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      end,
-    },
-    window = {
-      -- completion = cmp.config.window.bordered(),
-      -- documentation = cmp.config.window.bordered(),
-    },
-    mapping = cmp.mapping.preset.insert({
-      ['<C-b>'] = cmp.mapping.scroll_docs(-4),
-      ['<C-f>'] = cmp.mapping.scroll_docs(4),
-      ['<C-Space>'] = cmp.mapping.complete(),
-      ['<C-e>'] = cmp.mapping.abort(),
-      ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-    }),
-    sources = cmp.config.sources({
-      { name = 'nvim_lsp' },
-      { name = 'vsnip' }, -- For vsnip users.
-      -- { name = 'luasnip' }, -- For luasnip users.
-      -- { name = 'ultisnips' }, -- For ultisnips users.
-      -- { name = 'snippy' }, -- For snippy users.
-    }, {
-      { name = 'buffer' },
-    })
-  })
-
-  -- Set configuration for specific filetype.
-  cmp.setup.filetype('gitcommit', {
-    sources = cmp.config.sources({
-      { name = 'cmp_git' }, -- You can specify the `cmp_git` source if you were installed it.
-    }, {
-      { name = 'buffer' },
-    })
-  })
-
-  -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline('/', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-      { name = 'buffer' }
-    }
-  })
-
-  -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(':', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = cmp.config.sources({
-      { name = 'path' }
-    }, {
-      { name = 'cmdline' }
-    })
-  })
-
-  -- Setup lspconfig.
-  local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-  -- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
-  require('lspconfig')['<YOUR_LSP_SERVER>'].setup {
-    capabilities = capabilities
-  }
-EOF
