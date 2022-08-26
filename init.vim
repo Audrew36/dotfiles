@@ -33,7 +33,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim' 
 Plug 'scrooloose/nerdcommenter'
-Plug 'prettier/vim-prettier', 
+Plug 'prettier/vim-prettier', { 'do': 'yarn install --frozen-lockfile --production' }
 Plug 'HerringtonDarkholme/yats.vim' 
 
 Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
@@ -64,16 +64,16 @@ Plug 'hrsh7th/vim-vsnip'
 " Plug 'dcampos/cmp-snippy'
 
 call plug#end()
+inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<C-g>u\<TAB>"
 set termguicolors
 let g:rainbow_active = 1
 autocmd VimEnter * RainbowToggle
-let g:vim_jsx_pretty_colorful_config = 0
 "let g:Hexokinase_highlighters = [ 'virtual' ]
 "let g:Hexokinase_highlighters = [ 'sign_column' ]
 let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 
 "let g:rainbow#max_level = 99
-"let g:rainbow#pairs = [['{', '}'], ['(', ')'], ['[', ']']]
+"let g:rainbow#pairs = [['<', '>']]
 "autocmd FileType * RainbowParentheses
 
 set background=dark
