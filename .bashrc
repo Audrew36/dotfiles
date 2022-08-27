@@ -1,7 +1,10 @@
+echo "export ANDROID_HOME=$ANDROID_HOME" >> ~/`[[ $SHELL == *"zsh" ]] && echo '.zshenv' || echo '.bash_profile'`
+
+[ -d "$HOME/Android/Sdk" ] && ANDROID_HOME=$HOME/Android/Sdk || ANDROID_HOME=$HOME/Android/Sdk
 # ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
-~/.fehbg
+export ANDROID_HOME=/home/sos/Android/sdk
 set -o vi
 # If not running interactively, don't do anything
 case $- in
@@ -116,7 +119,3 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
