@@ -6,6 +6,9 @@ echo "export ANDROID_HOME=$ANDROID_HOME" >> ~/`[[ $SHELL == *"zsh" ]] && echo '.
 # for examples
 export ANDROID_HOME=/home/sos/Android/sdk
 set -o vi
+~/.fehbg
+compton -b
+exec slstatus &
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
