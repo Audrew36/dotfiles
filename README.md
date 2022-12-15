@@ -8,6 +8,8 @@ not sure if you need to place .vim to ~/.vim, I think its generated automaticall
 
 Make sure you have nerd fonts installed from  https://github.com/ryanoasis/nerd-fonts or just place HackFont.tff from repo directory and place it to ~/.local/share/fonts
 
+You will need python for neovim and golang installed 
+
 1. Install vim-plug
 3. enter nvim and enter :PlugInstall or to clean and remove use :PlugClean
 4. enter nvim and enter :CocInstall if needed
