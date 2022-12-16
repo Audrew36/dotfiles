@@ -186,6 +186,7 @@ function! OpenTerminal()
   resize 10
 endfunction
 nnoremap <c-t> :call OpenTerminal()<CR>
+nnoremap <c-T> :terminal<CR>
 
 let g:NERDTreeGitStatusWithFlags = 1
 "let g:WebDevIconsUnicodeDecorateFolderNodes = 1
