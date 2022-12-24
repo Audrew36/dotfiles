@@ -6,6 +6,8 @@ echo "export ANDROID_HOME=$ANDROID_HOME" >> ~/`[[ $SHELL == *"zsh" ]] && echo '.
 # for examples
 export ANDROID_HOME=/home/sos/Android/sdk
 set -o vi
+xset -dpms
+xset s off
 ~/.fehbg
 compton -b
 exec slstatus &
@@ -122,3 +124,14 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+export PICO_SDK_PATH=/usr/local/src/pi/pico/pico-sdk
+
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+# export PICO_SDK_PATH=/home/audrew/Projects/system/raspberry-pi-pico/pico/pico-sdk
+export PICO_EXAMPLES_PATH=/home/audrew/Projects/system/raspberry-pi-pico/pico/pico-examples
+export PICO_EXTRAS_PATH=/home/audrew/Projects/system/raspberry-pi-pico/pico/pico-extras
+export PICO_PLAYGROUND_PATH=/home/audrew/Projects/system/raspberry-pi-pico/pico/pico-playground
