@@ -1,4 +1,22 @@
 {
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "rootPatterns": [".ccls-root", "compile_commands.json"],
+      "initializationOptions": {
+        "cache": {
+          "directory": ".ccls-cache"
+        },
+        "client": {
+          "snippetSupport": true
+        }
+      }
+    }
+  },
+  "snippets.ultisnips.pythonPrompt": false
+},
+{
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "suggest.autoTrigger": "always",
@@ -10,17 +28,29 @@
     "javascriptreact",
     "css",
     "Markdown",
-    "md"
+    "c",
+    "cpp",
+    "c++",
+    "md",
+    "objc",
+    "objcpp"
   ],
   "eslint.filetypes": [
     "javascript",
     "json",
     "typescript",
     "typescriptreact",
-    "javascriptreact"
+    "javascriptreact",
+    "clangc",
+    "c",
+    "cpp",
+    "c++",
+    "objc",
+    "objcpp"
   ],
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
-  "diagnostic.checkCurrentLine": true
+  "diagnostic.checkCurrentLine": true,
+  "snippets.ultisnips.pythonPrompt": false
 }
