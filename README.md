@@ -15,6 +15,7 @@ You will need python for neovim and golang installed
 4. enter nvim and enter :CocInstall if needed
 5. enter nvim and enter :CocInstall coc-clangd if needed
 6. also you can install cclc if necessary
+7. sudo apt-get install exuberant-ctags in order to run TAGBAR plugin
 
 ## Quick review of features:
 
@@ -24,3 +25,4 @@ You will need python for neovim and golang installed
 # to go to definiton press alt + d and to go back from definition press alt + o
 # to open nerd-tree ctrl + n
 # to comment quickly press // or to comment sexy press /y /s
+# to open smart TAGBAR press f8 . 

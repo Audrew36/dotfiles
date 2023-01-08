@@ -10,6 +10,8 @@ Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 Plug 'ryanoasis/vim-devicons'
 Plug 'windwp/nvim-autopairs'
 Plug 'maxmellon/vim-jsx-pretty'
+Plug 'vim-airline/vim-airline'
+Plug 'majutsushi/tagbar'
 "Plug 'pangloss/vim-javascript'
 "Plug 'mxw/vim-jsx'
 "Plug 'leafgarland/typescript-vim'
@@ -62,6 +64,7 @@ Plug 'hrsh7th/vim-vsnip'
 " For snippy users.
 " Plug 'dcampos/nvim-snippy'
 " Plug 'dcampos/cmp-snippy'
+nmap <F8> :TagbarToggle<CR>
 
 call plug#end()
 inoremap <expr> <TAB> pumvisible() ? "\<C-y>" : "\<C-g>u\<TAB>"
