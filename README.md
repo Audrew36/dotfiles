@@ -13,7 +13,8 @@ You will need python for neovim and golang installed
 1. Install vim-plug
 3. enter nvim and enter :PlugInstall or to clean and remove use :PlugClean
 4. enter nvim and enter :CocInstall if needed
-4. enjoy 
+5. enter nvim and enter :CocInstall coc-clangd if needed
+6. also you can install cclc if necessary
 
 ## Quick review of features:
 
