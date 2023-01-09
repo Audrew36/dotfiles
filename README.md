@@ -6,7 +6,7 @@ move nvim and vim folders to ~/.config/ individually
 
 not sure if you need to place .vim to ~/.vim, I think its generated automatically
 
-Make sure you have nerd fonts installed from  https://github.com/ryanoasis/nerd-fonts or just place HackFont.tff from repo directory and place it to ~/.local/share/fonts
+Make sure you have nerd fonts installed from  https://github.com/ryanoasis/nerd-fonts or just place Gohu.tff from repo directory and place it to ~/.local/share/fonts
 
 You will need python for neovim and golang installed 
 
@@ -14,8 +14,10 @@ You will need python for neovim and golang installed
 3. enter nvim and enter :PlugInstall or to clean and remove use :PlugClean
 4. enter nvim and enter :CocInstall if needed
 5. enter nvim and enter :CocInstall coc-clangd if needed
-6. also you can install cclc if necessary
+6. also you can install cclc if necessary "sudo apt install ccls"
 7. sudo apt-get install exuberant-ctags in order to run TAGBAR plugin
+8. Install latest stable nodejs
+9. enter nvim and enter :CocInstall clangd.install if needed
 
 ## Quick review of features:
 
