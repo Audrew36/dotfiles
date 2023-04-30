@@ -28,4 +28,4 @@ to open nerd-tree ctrl + n
 to comment quickly press // or to comment sexy press /y /s
 to open smart TAGBAR press f8 . 
 to comment in react press super key plus l
-to console.log write cl enter
+to console.log write log and press enter
