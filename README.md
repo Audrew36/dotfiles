@@ -16,6 +16,7 @@ You will need python for neovim and golang installed
 7. sudo apt-get install exuberant-ctags in order to run TAGBAR plugin
 8. Install latest stable nodejs
 9. enter nvim and enter :CocInstall clangd.install if needed
+10. sudo apt-get install gnome-screenshot
 
 ## Quick review of features:
 
@@ -26,3 +27,5 @@ to go to definiton press "gd" and to go back from definition press "ctr + o"
 to open nerd-tree ctrl + n
 to comment quickly press // or to comment sexy press /y /s
 to open smart TAGBAR press f8 . 
+to comment in react press super key plus l
+to console.log write cl enter

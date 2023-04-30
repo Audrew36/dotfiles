@@ -12,6 +12,9 @@ Plug 'windwp/nvim-autopairs'
 Plug 'maxmellon/vim-jsx-pretty'
 Plug 'vim-airline/vim-airline'
 Plug 'majutsushi/tagbar'
+Plug 'Exafunction/codeium.vim'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'hrsh7th/vim-vsnip-integ'
 "Plug 'pangloss/vim-javascript'
 "Plug 'mxw/vim-jsx'
 "Plug 'leafgarland/typescript-vim'
@@ -25,7 +28,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'nvim-treesitter/nvim-treesitter' 
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'justinmk/vim-sneak'
-Plug 'github/copilot.vim'
+"Plug 'github/copilot.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'scrooloose/nerdtree'
 Plug 'tsony-tsonev/nerdtree-git-plugin'
@@ -79,6 +82,8 @@ let g:Hexokinase_highlighters = [ 'backgroundfull' ]
 "let g:rainbow#pairs = [['<', '>']]
 "autocmd FileType * RainbowParentheses
 
+vnoremap <leader>l :s/\%V.\{-}\%V.*/{\/\* \0 \*\/}/g<CR>
+
 set background=dark
 "set background=light
 " Enable transparent background
@@ -89,7 +94,7 @@ let g:vscode_italic_comment = 1
 let g:vscode_disable_nvimtree_bg = v:true
 colorscheme vscode
 
-set guifont=DroidSansMono\ Nerd\ Font\ 11
+set guifont=DroidSansMono\ Nerd\ Font\ 9
 " ------------------------------------------------------------
 " auto-pairs configuration
 " ------------------------------------------------------------

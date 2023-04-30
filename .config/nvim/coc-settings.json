@@ -1,22 +1,4 @@
 {
-  "languageserver": {
-    "ccls": {
-      "command": "ccls",
-      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
-      "rootPatterns": [".ccls-root", "compile_commands.json"],
-      "initializationOptions": {
-        "cache": {
-          "directory": ".ccls-cache"
-        },
-        "client": {
-          "snippetSupport": true
-        }
-      }
-    }
-  },
-  "snippets.ultisnips.pythonPrompt": false
-},
-{
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
   "suggest.autoTrigger": "always",
@@ -52,5 +34,20 @@
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "diagnostic.checkCurrentLine": true,
+  "languageserver": {
+    "ccls": {
+      "command": "ccls",
+      "filetypes": ["c", "cpp", "cuda", "objc", "objcpp"],
+      "rootPatterns": [".ccls-root", "compile_commands.json"],
+      "initializationOptions": {
+        "cache": {
+          "directory": ".ccls-cache"
+        },
+        "client": {
+          "snippetSupport": true
+        }
+      }
+    }
+  },
   "snippets.ultisnips.pythonPrompt": false
 }
