@@ -6,7 +6,7 @@ move nvim and vim folders to ~/.config/ individually
 
 Make sure you have nerd fonts installed from  https://github.com/ryanoasis/nerd-fonts or just place Gohu.tff from repo directory and place it to ~/.local/share/fonts
 
-You will need python for neovim and golang installed 
+You will need nodejs python for neovim and golang and installed 
 
 1. Install vim-plug
 3. enter nvim and enter :PlugInstall or to clean and remove use :PlugClean
@@ -14,9 +14,8 @@ You will need python for neovim and golang installed
 5. enter nvim and enter :CocInstall coc-clangd if needed
 6. also you can install cclc if necessary "sudo apt install ccls"
 7. sudo apt-get install exuberant-ctags in order to run TAGBAR plugin
-8. Install latest stable nodejs
-9. enter nvim and enter :CocInstall clangd.install if needed
-10. sudo apt-get install gnome-screenshot
+8. enter nvim and enter :CocInstall clangd.install if needed
+8. :Codeium Auth
 
 ## Quick review of features:
 
